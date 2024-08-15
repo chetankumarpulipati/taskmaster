@@ -2,7 +2,7 @@ import React from 'react';
 import TaskList from './components/TaskList';
 import './App.css';
 
-const logo = require('../src/images/logo.png');
+const logo = require('./assets/images/logo.png');
 
 function App() {
     return (
