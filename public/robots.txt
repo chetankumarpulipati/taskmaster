@@ -1,3 +1,6 @@
 # https://www.robotstxt.org/robotstxt.html
+# SEO-friendly robots.txt
 User-agent: *
-Disallow:
+Allow: /
+Sitemap: https://yourdomain.com/sitemap.xml
+# Disallow sensitive or non-public paths if any
