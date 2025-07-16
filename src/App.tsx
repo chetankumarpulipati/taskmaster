@@ -6,17 +6,21 @@ import './App.css';
 const logo = require('./assets/images/logo.png');
 
 const privacyPolicyHtml = `
-  <h1>Privacy Policy</h1>
-  <p>At Task Master, your privacy is our top priority. We do not collect, store, or share any personal information. All your tasks and data are stored locally in your browser and are never transmitted to any server or third party.</p>
-  <h2>Information Collection and Use</h2>
-  <p>Task Master is a client-side application. We do not require you to create an account or provide any personal details. All data you enter remains on your device.</p>
-  <h2>Cookies and Tracking</h2>
-  <p>We do not use cookies, analytics, or any tracking technologies. Your activity within the app is private and not monitored.</p>
-  <h2>Contact</h2>
-  <p>If you have any questions or concerns about your privacy, please contact us at <a href="mailto:chetankumarpulipati4@gmail.com">chetankumarpulipati4@gmail.com</a>.</p>
-  <h2>Policy Updates</h2>
-  <p>This privacy policy may be updated from time to time. Please check this page for the latest information.</p>
-  <p>Last updated: July 5, 2025</p>
+  <h2>Privacy Policy</h2>
+  <p><b>Your privacy matters.</b> Quizify processes your HTML files <b>entirely in your browser</b>. No files or quiz data are uploaded to any server. All conversions and quiz attempts happen locally on your device. We do not collect, store, or share any personal data or quiz content.</p>
+  <ul>
+    <li>No file uploads to our servers</li>
+    <li>No account or signup required</li>
+    <li>No tracking of quiz answers or results</li>
+    <li>Analytics are anonymous and only for site improvement</li>
+  </ul>
+  <h3>Ad Disclaimer</h3>
+  <p>
+    This website displays advertisements provided by third-party networks such as Adsterra.
+    We do not control or endorse the content of these ads. Some ads may contain content that is not suitable for all audiences.
+    We do not promote or support any adult, gambling, or misleading content that may appear through these third-party ads.
+    Please exercise caution when interacting with external links.
+  </p>
 `;
 
 function setCookie(name: string, value: string, days: number) {
@@ -45,6 +49,24 @@ function App() {
         setCookie('cookieConsent', 'accepted', 365);
         setShowCookieBanner(false);
     };
+
+    useEffect(() => {
+        // Inject ad script after component mounts
+        const script = document.createElement('script');
+        script.async = true;
+        script.setAttribute('data-cfasync', 'false');
+        script.src = '//pl27087518.profitableratecpm.com/a13f6b1ec6ebaaeeaf31a1248ac15bd7/invoke.js';
+        const container = document.getElementById('container-a13f6b1ec6ebaaeeaf31a1248ac15bd7');
+        if (container) {
+            container.appendChild(script);
+        }
+        // Cleanup: remove script on unmount
+        return () => {
+            if (container && script.parentNode === container) {
+                container.removeChild(script);
+            }
+        };
+    }, []);
 
     return (
         <HelmetProvider>
@@ -89,7 +111,7 @@ function App() {
                 </ul>
                 <p>&copy; {new Date().getFullYear()} Task Master. All rights reserved.</p>
                 <div className="footer-extra">
-                    <span>Made with <span style={{color: '#ff4d4d', fontSize: '1.2em', verticalAlign: 'middle'}}>&hearts;</span> by <b>ckmrp</b></span>
+                    <span>Made with <span style={{color: '#ff4d4d', fontSize: '1.2em', verticalAlign: 'middle'}}>&hearts;</span><b></b></span>
                     <a className="coffee-link" href="https://www.buymeacoffee.com/ckmrp" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
                 </div>
             </footer>
@@ -101,6 +123,8 @@ function App() {
                     <button onClick={handleAcceptCookies}>Accept</button>
                 </div>
             )}
+            {/* Ad Script Injection */}
+            <div id="container-a13f6b1ec6ebaaeeaf31a1248ac15bd7" style={{ minHeight: 100 }}></div>
         </HelmetProvider>
     );
 }
