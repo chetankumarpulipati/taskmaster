@@ -7,47 +7,43 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Task Master - A privacy-focused task management app. Organize your tasks efficiently with no ads, no tracking, and complete local storage."
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self';" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Task Master</title>
-    <meta name="keywords" content="task manager, productivity, to-do list, task master, organize tasks, project management, reminders, schedule" />
-    <meta property="og:title" content="Task Master - Organize Your Tasks Efficiently" />
-    <meta property="og:description" content="Task Master helps you manage your tasks, boost productivity, and stay organized. Create, track, and complete your to-dos easily!" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <title>Task Master - Privacy-Focused Task Management</title>
+    <meta name="keywords" content="task manager, productivity, to-do list, task master, organize tasks, project management, reminders, schedule, privacy-focused, no tracking" />
+    <meta name="author" content="Task Master" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Task Master - Privacy-Focused Task Management" />
+    <meta property="og:description" content="Organize your tasks efficiently with no ads, no tracking, and complete local storage. Your privacy matters." />
     <meta property="og:image" content="%PUBLIC_URL%/assets/images/task-master.png" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://localhost:3000" />
+    <meta property="og:url" content="https://yourdomain.com" />
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Task Master - Organize Your Tasks Efficiently" />
-    <meta name="twitter:description" content="Task Master helps you manage your tasks, boost productivity, and stay organized. Create, track, and complete your to-dos easily!" />
+    <meta name="twitter:title" content="Task Master - Privacy-Focused Task Management" />
+    <meta name="twitter:description" content="Organize your tasks efficiently with no ads, no tracking, and complete local storage. Your privacy matters." />
     <meta name="twitter:image" content="%PUBLIC_URL%/assets/images/task-master.png" />
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <div style="text-align: center; padding: 20px; font-family: Arial, sans-serif;">
+        <h1>JavaScript Required</h1>
+        <p>Task Master requires JavaScript to function properly. Please enable JavaScript in your browser and reload the page.</p>
+      </div>
+    </noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>

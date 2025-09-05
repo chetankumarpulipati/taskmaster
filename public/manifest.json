@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "TaskMaster",
+  "name": "Task Master - Privacy-Focused Task Management",
+  "description": "A privacy-focused task management app with no ads, no tracking, and complete local storage.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,16 +11,26 @@
     {
       "src": "logo192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "maskable any"
     },
     {
       "src": "logo512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "maskable any"
     }
   ],
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#4285f4",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "categories": [
+    "productivity",
+    "utilities"
+  ],
+  "lang": "en-US",
+  "scope": "/",
+  "prefer_related_applications": false
 }
